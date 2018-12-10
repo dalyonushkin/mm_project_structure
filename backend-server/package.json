@@ -1,0 +1,27 @@
+{
+  "name": "@borlas/borlas_mobile_monitor_meteor",
+  "version": "0.4.48-20",
+  "description": "Borlas Mobile Monitoring Model Server Datasource",
+  "author": "Borlas Group LLC",
+  "homepage": "http://borlas.ru/",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "@borlas/core.atlas.lib.mors.borlas.ru": "1.0.15",
+    "@borlas/mobile-monitor-business-objects": "1.0.37",
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^1.0.3",
+    "connect": "^2.30.2",
+    "fibers": "^2.0.2",
+    "meteor-node-stubs": "^0.2.11",
+    "meteor-rxjs": "^0.4.8",
+    "rxjs": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/meteor": "^1.4.7",
+    "meteor-typings": "^1.4.1",
+    "tmp": "0.0.33"
+  }
+}

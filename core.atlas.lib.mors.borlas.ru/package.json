@@ -1,0 +1,53 @@
+{
+  "name": "@borlas/core.atlas.lib.mors.borlas.ru",
+  "version": "1.0.15",
+  "description": "Borlas MORS library - Atlas (ARS) REST conncetion",
+  "main": "lib_js/index.js",
+  "types": "lib_js/index.d.ts",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "http://docker.borlas.ru:4873"
+  },
+  "scripts": {
+    "prepublish": "npm run tsc",
+    "try": "tsc&&node lib_js/index.js",
+    "test": "mocha",
+    "test:cov": "nyc mocha",
+    "test:integ": "cd test/integrationTests && ./runTests.sh",
+    "test:all": "npm run test && npm run test:integ",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "tsc": "./node_modules/typescript/bin/tsc"
+  },
+  "keywords": [
+    "MORS",
+    "mobile",
+    "APEX",
+    "ARS",
+    "Atlas"
+  ],
+  "author": "Denis Alyonushkin <dalyonushkin@borlas.ru>",
+  "repository": {
+    "type": "bitbucket",
+    "url": "git+ssh://git@dev.bcsupport.ru:7999/pmi6774/core.atlas.lib.mors.borlas.ru.git"
+  },
+  "bugs": {
+    "email": "dalyonushkin@borlas.ru"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.1",
+    "json-fs-store": "^1.0.1",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.1",
+    "@types/request": "^0.0.45",
+    "@types/storejs": "^1.3.1",
+    "@types/mocha": "^2.2.40",
+    "@types/node": "^7.0.12",
+    "codecov": "^2.1.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.2.0",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.2"
+  }
+}

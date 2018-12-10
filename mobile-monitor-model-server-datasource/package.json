@@ -1,0 +1,80 @@
+{
+  "name": "@borlas/mobile-monitor-model-server-datasource",
+  "version": "0.2.8-3",
+  "description": "Borlas Mobile Monitoring Model Server Datasource",
+  "author": "Borlas Group LLC",
+  "homepage": "http://borlas.ru/",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "registry": "http://docker.borlas.ru:4873"
+  },
+  "scripts": {
+    "prepublish": "tsc -p ./ --outDir dist/",
+    "build-ts": "./node_modules/tslint/bin/tslint -c tslint.json -p tsconfig.json && ./node_modules/typescript/bin/tsc",
+    "app": "npm run build-ts && node dist/index.js",
+    "tslint": "./node_modules/tslint/bin/tslint -c tslint.json -p tsconfig.json",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "test": "mocha",
+    "test-nyan": "mocha -R nyan",
+    "test:cov": "nyc mocha",
+    "watch:test": "mocha -r ts-node/register --watch test/**/*.test.ts --watch-extensions ts",
+    "watch:test_mongo_util": "mocha -r ts-node/register --watch test/**/mongo.util.test.ts --watch-extensions ts",
+    "npm-cli-login": "npm-cli-login",
+    "probe": "tsc && node ./lib_js/src/probe.js"
+  },
+  "repository": {
+    "type": "bitbucket",
+    "url": "git+ssh://git@dev.bcsupport.ru:7999/pmp5293/mobile-monitor-model.git"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@borlas/mobile-monitor-model": "^0.3.151",
+    "lodash": "^4.17.5",
+    "mongodb": "^3.0.4",
+    "rxjs": "^5.5.2",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/chai-spies": "0.0.0",
+    "@types/jasmine": "^2.8.2",
+    "@types/mocha": "^2.2.40",
+    "@types/mongodb": "3.0.5",
+    "@types/node": "^9.4.7",
+    "@types/underscore": "^1.8.8",
+    "@types/lodash": "^4.14.104",
+    "chai": "^4.1.2",
+    "chai-rx": "0.0.4",
+    "chai-spies": "^1.0.0",
+    "codecov": "^3.0.0",
+    "mocha": "^3.5.3",
+    "mocha-bamboo-reporter": "^1.1.1",
+    "nodeunit": "^0.11.2",
+    "npm-cli-login": "0.0.10",
+    "nyc": "^11.4.1",
+    "rx": "^4.1.0",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.4.3",
+    "tslint-eslint-rules": "^5.1.0",
+    "typescript": "^2.7.2",
+    "typescript-extends": "^1.0.1"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  }
+}

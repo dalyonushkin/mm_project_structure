@@ -1,0 +1,38 @@
+{
+  "name": "@borlas/mobile-monitor-business-objects",
+  "version": "1.0.32",
+  "description": "Business Objects for Borlas Mobile Monitoring",
+  "author": "Borlas Group LLC",
+  "homepage": "http://borlas.ru/",
+  "main": "lib_js/index.js",
+  "types": "lib_js/index.d.ts",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "http://docker.borlas.ru:4873"
+  },
+  "scripts": {
+    "build-ts": "./node_modules/tslint/bin/tslint -c tslint.json -p tsconfig.json && ./node_modules/typescript/bin/tsc",
+    "app": "npm run build-ts && node dist/index.js",
+    "tslint": "./node_modules/tslint/bin/tslint -c tslint.json -p tsconfig.json",
+    "tsc": "./node_modules/typescript/bin/tsc",
+    "build": "cd ..&&./update_bo.sh",
+    "prepublish":"npm run build-ts"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.25.0",
+    "meteor-rxjs": "^0.4.7",
+    "rxjs": "^5.4.0",
+    "validator": "^9.0.0",
+    "zone.js": "0.8.12"
+  },
+  "devDependencies": {
+    "@types/meteor": "^1.4.2",
+    "@types/underscore": "^1.8.1",
+    "@types/node": "6.0.58",
+    "meteor-typings": "^1.4.1",
+    "typescript": "2.3.4",
+    "typescript-extends": "^1.0.1",
+    "tslint": "^5.4.3",
+    "tslint-eslint-rules": "^4.1.1"
+  }
+}

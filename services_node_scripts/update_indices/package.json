@@ -1,0 +1,23 @@
+{
+  "name": "update-indices",
+  "version": "0.0.1",
+  "description": "Update indices",
+  "main": "index.js",
+  "scripts": {
+    "app": "npm run create:links&&tsc && node dist/index.js",
+    "debug": "tsc && node dist/index.js",
+    "create:links": "npm link lodash&&npm link mongodb&&npm link @types/mongodb&&npm link @types/node",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc:win": "node_modules\\typescript\\bin\\tsc",
+    "updateindices:win": "node dist\\index.js"
+  },
+  "author": "OGantshel",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/mongodb": "^3.1.1",
+    "@types/node": "^6.0.58",
+    "lodash": "^4.17.10",
+    "mongodb": "^3.1.1",
+    "typescript": "^2.3.4"
+  }
+}
